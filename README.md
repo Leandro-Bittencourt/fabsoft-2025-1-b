@@ -18,10 +18,13 @@
 
 <s>
 
-- Nome do sistema Ex:(Sistema para Mecânica)
-  - Funcionalidade 1
-  - Funcionalidade 2
-  - Funcionalidade 3
+- Nome do sistema Ex:(Sistema para loja de bicicletas)
+  - Funcionalidade 1: Cadastro de produtos
+  - Funcionalidade 2: Cadastro de clientes
+  - Funcionalidade 3: Catálogo de produtos
+  - Funcionalidade 4: Gerenciamento de pedidos
+  - Funcionalidade 5: Sistema de pagamento
+  - Funcionalidade 6: Envio e frete
 
 </s>
 
@@ -29,7 +32,13 @@
 [Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
 
 ## Histórias de Usuário
-- como um atendente eu gostaria de registrar os dados do cliente como: nome, endereço, telefone, email
+- como um secretário quero cadastrar pacientes no sistema com nome, cpf, telefone, email, dados do convênio, endereço para poder agendar consultas e ter o histórico médico
+- como administrador quero cadastrar médicos para que possam ser alocados na agenda
+- como paciente quero ter acesso a agenda médica para poder agendar uma consulta conforme minha disponibilidade
+- como médico quero acessas a agenda dos meus pacientes para poder atender de forma mais eficaz
+- como paciente quero poder cancelar ou remarcar minha consulta caso haja imprevisto
+- como paciente quero efetuar o pagamento da consulta ou informar meu convênio
+- como paciente quero receber notificações e lembretes em meu celular sobre data e horário de minha consulta
 
 
 ## Comandos do Git
