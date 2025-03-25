@@ -33,20 +33,22 @@
 
 ## Histórias de Usuário
 - secretário
-- como um secretário quero cadastrar pacientes no sistema com nome, cpf, telefone, email, dados do convênio, endereço para poder agendar consultas e ter o histórico médico
+- como um secretário quero cadastrar pacientes no sistema com nome, cpf, telefone, email, dados do convênio, endereço para poder agendar consultas e ter o histórico médico.
 - como um secretário gostaria de visualizar os agendamentos, e históricos de consultas de cada paciente.
 
 - paciente
-- como paciente quero ter acesso a agenda médica para poder agendar uma consulta conforme minha disponibilidade
-- como paciente quero poder cancelar ou remarcar minha consulta caso haja imprevisto
-- como paciente quero efetuar o pagamento da consulta ou informar meu convênio
-- como paciente quero receber notificações e lembretes em meu celular sobre data e horário de minha consulta
+- como paciente quero ter acesso a agenda médica para poder agendar uma consulta conforme minha disponibilidade.
+- como paciente quero poder cancelar ou remarcar minha consulta caso haja imprevisto.
+- como paciente quero efetuar o pagamento da consulta ou informar meu convênio.
+- como paciente quero receber notificações e lembretes em meu celular sobre data e horário de minha consulta.
 
 - administrador
-- como administrador quero cadastrar médicos para que possam ser alocados na agenda
+- como administrador quero cadastrar médicos para que possam ser alocados na agenda.
+- como administrador quero ter acesso a lista de pacientes e poder editar, incluir ou excluir cadastros.
 
 - médico
-- como médico quero acessas a agenda dos meus pacientes para poder atender de forma mais eficaz
+- como médico quero acessas a agenda dos meus pacientes para poder atender de forma mais eficaz.
+- como médico quero ter acesso ao histórico médico de meus pacientes.
 
 
 
