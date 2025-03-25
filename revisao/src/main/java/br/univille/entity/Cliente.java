@@ -8,12 +8,12 @@ public class Cliente {
     private String nome;
     private String endereço;
 
-    private ArrayList listaPokemon = new ArrayList();
+    private ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();
 
-    public ArrayList getListaPokemon() {
+    public ArrayList<Pokemon> getListaPokemon() {
         return listaPokemon;
     }
-    public void serListaPokemon(ArrayList listaPokemon){
+    public void serListaPokemon(ArrayList<Pokemon> listaPokemon){
         this.listaPokemon = listaPokemon;
     }
 
