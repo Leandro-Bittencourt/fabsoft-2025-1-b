@@ -11,6 +11,7 @@
 
     <modules>
         <module>revisao</module>
+        <module>projetofabricasoftwareagendamentodeconsultas</module>
     </modules>
 
 </project>
