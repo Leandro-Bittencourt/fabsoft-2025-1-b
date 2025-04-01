@@ -2,6 +2,7 @@
 
 ## Nome da equipe
 - Leandro José Bittencourt Balansin
+- Thiago Paulo de Oliveira
 
 ## Propostas de projeto
 
