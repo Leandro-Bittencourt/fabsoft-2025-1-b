@@ -13,3 +13,5 @@ public class ControllerCliente implements ActionListener{
     }
     
 }
+
+//controller controla o comportamento da tela
