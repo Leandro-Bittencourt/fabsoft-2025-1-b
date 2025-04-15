@@ -10,7 +10,7 @@ import jakarta.persistence.OneToOne;
 public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private Double valor;
     private String metodoPagamento;
@@ -20,10 +20,10 @@ public class Pagamento {
     private Consulta consulta;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public Double getValor() {

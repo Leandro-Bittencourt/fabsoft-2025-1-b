@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 public class Notificacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String mensagem;
     private LocalDateTime dataEnvio;
 
@@ -20,10 +20,10 @@ public class Notificacao {
     private Paciente destinatario;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getMensagem() {

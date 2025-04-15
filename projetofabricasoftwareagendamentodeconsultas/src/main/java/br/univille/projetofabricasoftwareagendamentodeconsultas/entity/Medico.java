@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String nome;
     private String especialidade;
     private String crm;
@@ -22,10 +22,10 @@ public class Medico {
     private List<Consulta> consultas;
 
     // Getters e Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getNome() {

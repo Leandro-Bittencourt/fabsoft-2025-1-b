@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjetofabricasoftwareagendamentodeconsultasApplication<projetofabricasoftwareagendamentodeconsultas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.projetofabricasoftwareagendamentodeconsultas.ProjetofabricasoftwareagendamentodeconsultasApplication",
+            "projectName": "projetofabricasoftwareagendamentodeconsultas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

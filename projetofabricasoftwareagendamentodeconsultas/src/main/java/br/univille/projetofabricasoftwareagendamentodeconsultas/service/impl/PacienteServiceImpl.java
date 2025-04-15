@@ -30,7 +30,7 @@ public class PacienteServiceImpl implements PacienteService{
     public Paciente getById(Long id) {
         var retorno = repository.findById(id);
         if (retorno.isPresent())
-            return retorno.get();
+            return retorno.get(); 
         return null;
     }
 
