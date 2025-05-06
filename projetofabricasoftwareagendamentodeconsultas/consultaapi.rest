@@ -18,12 +18,29 @@ POST http://localhost:8080/api/v1/consulta
 Content-Type: application/json
 
 {
-    "dataHora": "2025-05-15T14:30:00",
     "status": "Agendada",
-    "paciente": {
-        "id": 1
-    },
+    "paciente": 
+  {
+    "id": ,
+    "nome": "Leandro Bittencourt",
+    "cpf": "069.208.329-41",
+    "dataNascimento": "2005-07-16",
+    "telefone": "(47) 99654-9945",
+    "email": "leandro.balansin2005@gmail.com",
+    "convenio": "Unimed",
+    "endereco": "rua prefeito helmuth fallgatter 785",
+    "historicoMedico": null,
+    "senha": null
+  },
+
     "medico": {
-        "id": 1
-    }
+    "id": ,
+    "nome": "Claudecir Evandro Gambeta",
+    "especialidade": "Joelho",
+    "agenda": null,
+    "pacientes": null,
+    "crm": "11114-SC",
+    "senha": null
+  },
+    
 }
