@@ -1,0 +1,39 @@
+### API MÉDICO - GET
+
+GET http://localhost:8080/api/v1/medico
+Accept: application/json
+
+###
+
+### API MÉDICO - POST
+
+POST http://localhost:8080/api/v1/medico
+Content-Type: application/json
+
+{
+    "id": 0,
+    "nome": "Claudecir Evandro Gambeta",
+    "especialidade": "Joelho",
+    "crm": "11114-SC"
+}
+
+###
+
+### API MÉDICO - PUT
+
+PUT http://localhost:8080/api/v1/medico/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "nome": "Claudecir Evandro Gambeta",
+    "especialidade": "Joelho",
+    "crm": "11114-SC"
+}
+
+###
+
+### API MÉDICO - DELETE
+
+DELETE http://localhost:8080/api/v1/medico/1
+Content-Type: application/json
