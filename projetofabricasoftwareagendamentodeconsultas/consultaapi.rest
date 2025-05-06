@@ -21,7 +21,7 @@ Content-Type: application/json
     "status": "Agendada",
     "paciente": 
   {
-    "id": ,
+    "id": 1,
     "nome": "Leandro Bittencourt",
     "cpf": "069.208.329-41",
     "dataNascimento": "2005-07-16",
@@ -34,7 +34,7 @@ Content-Type: application/json
   },
 
     "medico": {
-    "id": ,
+    "id": 1,
     "nome": "Claudecir Evandro Gambeta",
     "especialidade": "Joelho",
     "agenda": null,

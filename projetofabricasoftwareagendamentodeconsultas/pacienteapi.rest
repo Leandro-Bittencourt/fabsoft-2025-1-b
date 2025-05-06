@@ -15,7 +15,7 @@ Content-Type: application/json
     "email":  "leandro.balansin2005@gmail.com",
     "convenio": "Unimed",
     "endereco": "rua prefeito helmuth fallgatter 785",
-    "dataNascimento": "2005-07-16",
+    "dataNascimento": "2005-07-16"
 }
 
 ### API PACIENTE - PUT
