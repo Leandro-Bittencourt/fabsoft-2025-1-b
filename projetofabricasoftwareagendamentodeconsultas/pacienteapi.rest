@@ -18,4 +18,26 @@ Content-Type: application/json
     "dataNascimento": "2005-07-16",
 }
 
+### API PACIENTE - PUT
+
+PUT http://localhost:8080/api/v1/paciente/1
+Content-Type: application/json
+
+{
+    "id": 0,
+    "nome": "Leandro Bittencourt",
+    "cpf": "069.208.329-41",
+    "telefone": "(47) 99654-9945",
+    "email":  "leandro.balansin2005@gmail.com",
+    "convenio": "Unimed",
+    "endereco": "rua prefeito helmuth fallgatter 785",
+    "dataNascimento": "2005-07-16",
+}
+
+### API PACIENTE - DELETE
+
+DELETE http://localhost:8080/api/v1/paciente/1
+Content-Type: application/json
+
+
 

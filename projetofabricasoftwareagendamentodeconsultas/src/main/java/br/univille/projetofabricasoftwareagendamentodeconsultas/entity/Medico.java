@@ -15,6 +15,8 @@ public class Medico {
     private long id;
     private String nome;
     private String especialidade;
+    private String agenda;
+    private String pacientes;
     private String crm;
     private String senha;
 
@@ -39,6 +41,18 @@ public class Medico {
     }
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+    public String getAgenda() {
+        return agenda;
+    }
+    public void setAgenda(String agenda) {
+        this.agenda = agenda;
+    }
+    public String getPacientes() {
+        return pacientes;
+    }
+    public void setPacientes(String pacientes) {
+        this.pacientes = pacientes;
     }
     public String getCrm() {
         return crm;

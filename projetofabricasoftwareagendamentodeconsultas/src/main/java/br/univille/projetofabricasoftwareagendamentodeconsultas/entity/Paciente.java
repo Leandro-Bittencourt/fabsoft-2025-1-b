@@ -12,10 +12,12 @@ public class Paciente {
     private long id;
     private String nome;
     private String cpf;
+    private String dataNascimento;
     private String telefone;
     private String email;
     private String convenio;
     private String endereco;
+    private String historicoMedico;
     private String senha;
 
     // Getters e Setters
@@ -36,6 +38,12 @@ public class Paciente {
     }
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
     public String getTelefone() {
         return telefone;
@@ -60,6 +68,12 @@ public class Paciente {
     }
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+    public String getHistoricoMedico() {
+        return historicoMedico;
+    }
+    public void setHistoricoMedico(String historicoMedico) {
+        this.historicoMedico = historicoMedico;
     }
     public String getSenha() {
         return senha;
