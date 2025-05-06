@@ -8,10 +8,7 @@ import br.univille.projetofabricasoftwareagendamentodeconsultas.entity.Medico;
 import br.univille.projetofabricasoftwareagendamentodeconsultas.entity.Paciente;
 
 public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
-    
-    List<Consulta> findByMedico(Medico medico);
-    
-    List<Consulta> findByPaciente(Paciente paciente);
-
+    List<Consulta> findByMedicoId(Long idMedico);
+    List<Consulta> findByPacienteId(Long idPaciente);
     List<Consulta> findByStatus(String status);
 }
