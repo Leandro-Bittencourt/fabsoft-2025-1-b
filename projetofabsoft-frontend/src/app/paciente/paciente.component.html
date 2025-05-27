@@ -1,6 +1,31 @@
 <main class="container">
     <h2>Pacientes</h2>
     <table class="table">
-        
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Convênio</th>
+                <th>Endereço</th>
+                <th>Histórico Médico</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umPaciente of listaPacientes">
+                <td>{{umPaciente.nome}}</td>
+                <td>{{umPaciente.cpf}}</td>
+                <td>{{umPaciente.dataNascimento}}</td>
+                <td>{{umPaciente.telefone}}</td>
+                <td>{{umPaciente.email}}</td>
+                <td>{{umPaciente.convenio}}</td>
+                <td>{{umPaciente.endereco}}</td>
+                <td>{{umPaciente.historicoMedico}}</td>
+                <td>{{umPaciente.senha}}</td>
+            </tr>
+        </tbody>
     </table>
 </main>
