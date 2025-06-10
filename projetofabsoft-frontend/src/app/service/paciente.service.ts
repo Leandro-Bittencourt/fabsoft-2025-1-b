@@ -6,11 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PacienteService {
-  apiURL = "http://localhost:8080/api/v1/pacientes";
+  apiURL = "http://localhost:8080/api/v1/paciente";
 
   constructor(private http:HttpClient) { }
 
   getPacientes(){
     return this.http.get<Paciente[]>(this.apiURL);
+  }
+
+  savePaciente(paciente:Paciente){
+    return this.http.post(this.apiURL,paciente);
   }
 }
