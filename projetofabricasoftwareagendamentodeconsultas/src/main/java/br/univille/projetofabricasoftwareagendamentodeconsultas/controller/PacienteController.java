@@ -59,8 +59,7 @@ public class PacienteController {
         pacienteAntigo.setTelefone(paciente.getTelefone()); 
         pacienteAntigo.setEmail(paciente.getEmail());   
         pacienteAntigo.setConvenio(paciente.getConvenio()); 
-        pacienteAntigo.setEndereco(paciente.getEndereco()); 
-        pacienteAntigo.setSenha(paciente.getSenha());  
+        pacienteAntigo.setEndereco(paciente.getEndereco());
         service.save(pacienteAntigo);
         return new ResponseEntity<Paciente>(pacienteAntigo, 
                 HttpStatus.OK);

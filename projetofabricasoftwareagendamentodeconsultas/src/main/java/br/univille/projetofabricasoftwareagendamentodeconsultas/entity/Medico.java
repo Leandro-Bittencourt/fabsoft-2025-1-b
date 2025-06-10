@@ -18,7 +18,6 @@ public class Medico {
     private String agenda;
     private String pacientes;
     private String crm;
-    private String senha;
 
     @OneToMany(mappedBy = "medico")
     private List<Consulta> consultas;
@@ -59,11 +58,5 @@ public class Medico {
     }
     public void setCrm(String crm) {
         this.crm = crm;
-    }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }

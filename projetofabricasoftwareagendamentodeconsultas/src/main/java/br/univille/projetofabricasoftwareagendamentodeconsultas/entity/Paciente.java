@@ -18,7 +18,6 @@ public class Paciente {
     private String convenio;
     private String endereco;
     private String historicoMedico;
-    private String senha;
 
     // Getters e Setters
     public long getId() {
@@ -74,11 +73,5 @@ public class Paciente {
     }
     public void setHistoricoMedico(String historicoMedico) {
         this.historicoMedico = historicoMedico;
-    }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }
