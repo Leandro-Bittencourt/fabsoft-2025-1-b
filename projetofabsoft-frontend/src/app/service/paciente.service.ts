@@ -15,6 +15,13 @@ export class PacienteService {
   }
 
   savePaciente(paciente:Paciente){
+    if(paciente.id){
+      return this.http.put(this.apiURL + '/' + paciente.id, paciente);
+    }
     return this.http.post(this.apiURL,paciente);
+  }
+
+  getPacienteById(id: any) {
+    return this.http.get<Paciente>(this.apiURL + '/' + id);
   }
 }

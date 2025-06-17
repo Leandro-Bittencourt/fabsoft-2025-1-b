@@ -31,6 +31,13 @@ public class PacienteController {
         return new ResponseEntity<List<Paciente>>(listaPacientes, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Paciente> getPacienteId(@PathVariable long id){
+        var umPaciente = service.getById(id);
+
+        return new ResponseEntity<Paciente>(umPaciente, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Paciente> postPaciente(@RequestBody Paciente paciente) {
         if(paciente == null){

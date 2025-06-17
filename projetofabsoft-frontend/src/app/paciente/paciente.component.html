@@ -1,7 +1,7 @@
 <main class="container">
     <h2>Pacientes</h2>
 
-    <a routerLink="/pacientes/novo" class="btn btn-primary">Cadastrar Paciente </a>
+    <a (click)="novo()" class="btn btn-primary">Cadastrar Paciente </a>
 
     <table class="table">
         <thead>
@@ -13,7 +13,7 @@
                 <th>Email</th>
                 <th>Convênio</th>
                 <th>Endereço</th>
-                <th>Histórico Médico</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,9 @@
                 <td>{{umPaciente.email}}</td>
                 <td>{{umPaciente.convenio}}</td>
                 <td>{{umPaciente.endereco}}</td>
-                <td>{{umPaciente.historicoMedico}}</td>
-                <td>{{umPaciente.senha}}</td>
+
+                <td><a (click)="alterar(umPaciente)"
+                    class="btn btn-secondary">Alterar</a></td>
             </tr>
         </tbody>
     </table>

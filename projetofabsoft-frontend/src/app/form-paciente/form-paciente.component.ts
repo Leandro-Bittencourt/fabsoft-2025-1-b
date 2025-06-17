@@ -4,7 +4,7 @@ import { PacienteService } from '../service/paciente.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-form-paciente',
@@ -18,8 +18,17 @@ export class FormPacienteComponent {
     
     constructor(
       private pacienteService:PacienteService,
-      private router:Router
-    ) {}
+      private router:Router,
+      private activeRouter: ActivatedRoute
+    ) {
+      const id = this.activeRouter.snapshot.paramMap.get('id');
+
+      if (id) {
+        this.pacienteService.getPacienteById(id).subscribe(paciente => {
+          this.paciente = paciente;
+        });
+      }
+    }
 
     salvar(){
       this.pacienteService.savePaciente(this.paciente) 
