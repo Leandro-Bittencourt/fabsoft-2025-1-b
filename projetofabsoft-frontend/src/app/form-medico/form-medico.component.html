@@ -1,0 +1,30 @@
+<main class="container">
+    <h2>Médico</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtNome">Nome</label>
+                <input type="text" 
+                [(ngModel)]="medico.nome"
+                class="form-control"
+                id="txtNome">
+            </div>
+            <div class="form-group">
+                <label for="txtCPF">Especialidade</label>
+                <input type="text" 
+                [(ngModel)]="medico.especialidade"
+                class="form-control"
+                id="txtCPF">
+            </div>
+            <div class="form-group">
+                <label for="txtData de Nascimento">CRM</label>
+                <input type="text" 
+                [(ngModel)]="medico.crm"
+                class="form-control"
+                id="txtData de Nascimento">
+            </div>
+        </div>
+        <button (click)="salvar()"
+        class="btn btn-primary">Salvar</button>
+    </div>
+</main>
