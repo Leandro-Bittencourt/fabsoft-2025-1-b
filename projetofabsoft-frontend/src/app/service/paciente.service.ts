@@ -24,4 +24,8 @@ export class PacienteService {
   getPacienteById(id: any) {
     return this.http.get<Paciente>(this.apiURL + '/' + id);
   }
+
+  excluirPaciente(id: any){
+    return this.http.delete<Paciente>(this.apiURL + '/' + id);
+  }
 }

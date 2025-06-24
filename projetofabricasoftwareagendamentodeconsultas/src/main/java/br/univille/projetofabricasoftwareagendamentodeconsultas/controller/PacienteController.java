@@ -33,9 +33,9 @@ public class PacienteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Paciente> getPacienteId(@PathVariable long id){
-        var umPaciente = service.getById(id);
+        var Paciente = service.getById(id);
 
-        return new ResponseEntity<Paciente>(umPaciente, HttpStatus.OK);
+        return new ResponseEntity<Paciente>(Paciente, HttpStatus.OK);
     }
 
     @PostMapping
