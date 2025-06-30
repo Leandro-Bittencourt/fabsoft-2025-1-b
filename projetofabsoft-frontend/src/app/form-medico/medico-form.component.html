@@ -1,0 +1,40 @@
+<main class="container">
+    <h2>Médico</h2>
+    <form (ngSubmit)="onSubmit(medicoForm)" #medicoForm="ngForm">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="txtNome">Nome</label>
+                    <input type="text" 
+                        name="nome"
+                        [(ngModel)]="medico.nome"
+                        class="form-control"
+                        id="txtNome"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="txtEspecialidade">Especialidade</label>
+                    <input type="text" 
+                        name="especialidade"
+                        [(ngModel)]="medico.especialidade"
+                        class="form-control"
+                        id="txtEspecialidade"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="txtCRM">CRM</label>
+                    <input type="text" 
+                        name="crm"
+                        [(ngModel)]="medico.crm"
+                        class="form-control"
+                        id="txtCRM"
+                        required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+        <div *ngIf="mensagem" [ngClass]="{'text-success': !erro, 'text-danger': erro}" class="mt-2">
+            {{ mensagem }}
+        </div>
+    </form>
+</main>

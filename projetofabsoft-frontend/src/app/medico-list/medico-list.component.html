@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Especialidade</th>
+    <th>CRM</th>
+  </tr>
+  <tr *ngFor="let medico of medicos">
+    <td>{{ medico.nome }}</td>
+    <td>{{ medico.especialidade }}</td>
+    <td>{{ medico.crm }}</td>
+  </tr>
+</table>

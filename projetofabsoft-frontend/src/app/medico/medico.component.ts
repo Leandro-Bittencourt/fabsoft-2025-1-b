@@ -1,28 +1,34 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Medico } from '../model/medico';
-import { MedicoService } from '../service/medico.service';
+import { MedicoService } from '../services/medico.service';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-medico',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './medico.component.html',
   styleUrls: ['./medico.component.css']
 })
-export class MedicoComponent {
+export class MedicoComponent implements OnInit {
   listaMedicos: Medico[] = [];
+
+  @ViewChild('myModal') modalElement!: ElementRef;
+  private modal!: bootstrap.Modal;
+  private medicoSelecionado!: Medico;
 
   constructor(
     private medicoService: MedicoService,
     private router: Router 
   ) {}
 
-  novo() {
-    this.router.navigate(['medicos/novo']);
+  ngOnInit() {
+    this.carregarMedicos();
   }
 
-  ngOnInit() {
-    console.log("Carregando médicos...");
+  carregarMedicos() {
     this.medicoService.getMedicos().subscribe(
       medicos => {
         this.listaMedicos = medicos;
@@ -30,13 +36,13 @@ export class MedicoComponent {
     );
   }
 
+  novo() {
+    this.router.navigate(['medicos/novo']);
+  }
+
   alterar(medico: Medico) {
     this.router.navigate(['medicos/alterar', medico.id]);
   }
-
-  @ViewChild('myModal') modalElement!: ElementRef;
-  private modal!: bootstrap.Modal;
-  private medicoSelecionado!: Medico;
 
   abrirConfirmacao(medico: Medico) {
     this.medicoSelecionado = medico;
@@ -52,11 +58,7 @@ export class MedicoComponent {
     this.medicoService.excluirMedico(this.medicoSelecionado.id).subscribe(
       () => {
         this.fecharConfirmacao();
-        this.medicoService.getMedicos().subscribe(
-          medicos => {
-            this.listaMedicos = medicos;
-          }
-        );
+        this.carregarMedicos();
       },
       error => {
         console.error('Erro ao excluir médico:', error);

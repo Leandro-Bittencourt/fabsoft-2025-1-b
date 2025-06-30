@@ -1,37 +1,40 @@
 import { Component } from '@angular/core';
+import { NgForm, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MedicoService } from '../services/medico.service';
 import { Medico } from '../model/medico';
-import { MedicoService } from '../service/medico.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
-
 
 @Component({
   selector: 'app-form-medico',
-  templateUrl: './form-medico.component.html',
-  styleUrls: ['./form-medico.component.css'],
-  imports: [HttpClientModule, FormsModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './medico-form.component.html',
+  styleUrls: ['./form-medico.component.css']
 })
 export class FormMedicoComponent {
-  medico: Medico = new Medico();
+  medico: Medico = { id: 0, nome: '', especialidade: '', crm: '' }; 
+  mensagem: string | null = null;
+  erro: boolean = false;
 
-  constructor(
-    private medicoService: MedicoService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id) {
-      this.medicoService.getMedicoById(id).subscribe(m => {
-        this.medico = m;
+  constructor(private medicoService: MedicoService) {}
+
+  onSubmit(form: NgForm): void {
+    if (form.valid) {
+      this.medicoService.save(this.medico).subscribe({
+        next: () => {
+          this.mensagem = 'Médico cadastrado com sucesso!';
+          this.erro = false;
+          form.resetForm();
+          this.medico = { id: 0, nome: '', especialidade: '', crm: '' };
+        },
+        error: () => {
+          this.mensagem = 'Erro ao cadastrar médico.';
+          this.erro = true;
+        }
       });
+    } else {
+      this.mensagem = 'Preencha todos os campos obrigatórios.';
+      this.erro = true;
     }
-  }
-
-  salvar() {
-    this.medicoService.saveMedico(this.medico).subscribe(() => {
-      this.router.navigate(['medicos']);
-    });
   }
 }
