@@ -4,16 +4,18 @@ import { Medico } from '../model/medico';
 import { MedicoService } from '../services/medico.service';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-medico',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './medico.component.html',
   styleUrls: ['./medico.component.css']
 })
 export class MedicoComponent implements OnInit {
   listaMedicos: Medico[] = [];
+  medico = { id:0, nome: '', especialidade: '', crm: '' };
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -35,6 +37,18 @@ export class MedicoComponent implements OnInit {
       }
     );
   }
+
+  salvar() {
+  this.medicoService.save(this.medico).subscribe({
+    next: (novoMedico) => {
+      this.carregarMedicos();
+      this.medico = { id: 0, nome: '', especialidade: '', crm: '' };
+    },
+    error: (err) => {
+      console.error('Erro ao salvar médico:', err);
+    }
+  });
+}
 
   novo() {
     this.router.navigate(['medicos/novo']);

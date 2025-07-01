@@ -12,4 +12,5 @@ export const routes: Routes = [
   { path: 'medicos', component: MedicoListComponent },
   { path: 'medicos/novo', component: FormMedicoComponent },
   { path: 'medicos/alterar/:id', component: FormMedicoComponent }
+
 ];

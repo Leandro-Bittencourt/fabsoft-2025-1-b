@@ -35,5 +35,5 @@ Content-Type: application/json
 
 ### API MÉDICO - DELETE
 
-DELETE http://localhost:8080/api/v1/medico/1
+DELETE http://localhost:8080/api/medico/1
 Content-Type: application/json

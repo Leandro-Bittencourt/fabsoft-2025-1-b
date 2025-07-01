@@ -1,12 +1,30 @@
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Especialidade</th>
-    <th>CRM</th>
-  </tr>
-  <tr *ngFor="let medico of medicos">
-    <td>{{ medico.nome }}</td>
-    <td>{{ medico.especialidade }}</td>
-    <td>{{ medico.crm }}</td>
-  </tr>
-</table>
+<nav class="navbar navbar-expand navbar-light bg-light mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Agendamento Online</a>
+    <div class="navbar-nav">
+      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/pacientes'">Pacientes</button>
+      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/agendamentos'">Agendamentos</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <h2>Médicos</h2>
+  <a href="http://localhost:4200/medicos/novo" class="btn btn-primary mb-3">Cadastrar Médico</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Especialidade</th>
+        <th>CRM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medico of medicos">
+        <td>{{ medico.nome }}</td>
+        <td>{{ medico.especialidade }}</td>
+        <td>{{ medico.crm }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

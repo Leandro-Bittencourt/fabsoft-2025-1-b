@@ -10,7 +10,28 @@
 <main class="container">
     <h2>Médicos</h2>
 
-    <a (click)="novo()" class="btn btn-primary">Cadastrar Médico</a>
+    <!-- Formulário de cadastro de médico -->
+    <form #medicoForm="ngForm" (ngSubmit)="salvar()">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="form-group mb-2">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" [(ngModel)]="medico.nome" class="form-control" required>
+          </div>
+          <div class="form-group mb-2">
+            <label for="especialidade">Especialidade</label>
+            <input id="especialidade" name="especialidade" [(ngModel)]="medico.especialidade" class="form-control" required>
+          </div>
+          <div class="form-group mb-2">
+            <label for="crm">CRM</label>
+            <input id="crm" name="crm" [(ngModel)]="medico.crm" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </form>
+
+    <a (click)="novo()" class="btn btn-primary mb-3">Cadastrar Médico</a>
 
     <table class="table">
         <thead>
@@ -26,11 +47,9 @@
                 <td>{{umMedico.nome}}</td>
                 <td>{{umMedico.especialidade}}</td>
                 <td>{{umMedico.crm}}</td>
-
-                <td><a (click)="alterar(umMedico)"
-                    class="btn btn-secondary">Alterar</a>
-                    <a (click)="abrirConfirmacao(umMedico)" 
-                    class="btn btn-danger">Excluir</a>
+                <td>
+                    <a (click)="alterar(umMedico)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="abrirConfirmacao(umMedico)" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         </tbody>
