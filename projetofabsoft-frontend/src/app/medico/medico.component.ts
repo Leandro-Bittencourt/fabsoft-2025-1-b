@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Medico } from '../model/medico';
-import { MedicoService } from '../services/medico.service';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -14,48 +13,39 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./medico.component.css']
 })
 export class MedicoComponent implements OnInit {
-  listaMedicos: Medico[] = [];
-  medico = { id:0, nome: '', especialidade: '', crm: '' };
+  // Médico fixo já cadastrado com os dados fornecidos
+  listaMedicos: Medico[] = [
+    { id: 1, nome: 'Claudecir Evandro Gambeta', especialidade: 'Joelho', crm: '11114-SC' }
+  ];
+  // Formulário sempre limpo para novo cadastro
+  medico: Medico = { id: 0, nome: '', especialidade: '', crm: '' };
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
   private medicoSelecionado!: Medico;
 
   constructor(
-    private medicoService: MedicoService,
     private router: Router 
   ) {}
 
   ngOnInit() {
-    this.carregarMedicos();
-  }
-
-  carregarMedicos() {
-    this.medicoService.getMedicos().subscribe(
-      medicos => {
-        this.listaMedicos = medicos;
-      }
-    );
+    // Não carrega do backend, mantém apenas o médico fixo
   }
 
   salvar() {
-  this.medicoService.save(this.medico).subscribe({
-    next: (novoMedico) => {
-      this.carregarMedicos();
-      this.medico = { id: 0, nome: '', especialidade: '', crm: '' };
-    },
-    error: (err) => {
-      console.error('Erro ao salvar médico:', err);
-    }
-  });
-}
+    // Adiciona o novo médico à lista local (não envia para backend)
+    const novoId = this.listaMedicos.length > 0 ? Math.max(...this.listaMedicos.map(m => m.id)) + 1 : 1;
+    const novoMedico = { ...this.medico, id: novoId };
+    this.listaMedicos.push(novoMedico);
+    this.medico = { id: 0, nome: '', especialidade: '', crm: '' };
+  }
 
   novo() {
-    this.router.navigate(['medicos/novo']);
+    this.medico = { id: 0, nome: '', especialidade: '', crm: '' };
   }
 
   alterar(medico: Medico) {
-    this.router.navigate(['medicos/alterar', medico.id]);
+    this.medico = { ...medico };
   }
 
   abrirConfirmacao(medico: Medico) {
@@ -69,14 +59,7 @@ export class MedicoComponent implements OnInit {
   }
 
   confirmarExclusao() {
-    this.medicoService.excluirMedico(this.medicoSelecionado.id).subscribe(
-      () => {
-        this.fecharConfirmacao();
-        this.carregarMedicos();
-      },
-      error => {
-        console.error('Erro ao excluir médico:', error);
-      }
-    );
+    this.listaMedicos = this.listaMedicos.filter(m => m.id !== this.medicoSelecionado.id);
+    this.fecharConfirmacao();
   }
 }

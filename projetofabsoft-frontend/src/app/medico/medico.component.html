@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand navbar-light bg-light mb-4">
   <div class="container-fluid">
     <div class="navbar-nav">
-      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/pacientes'">Pacientes</button>
+      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/pacientess'">Pacientes</button>
       <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/agendamentos'">Agendamentos</button>
     </div>
   </div>
@@ -10,7 +10,6 @@
 <main class="container">
     <h2>Médicos</h2>
 
-    <!-- Formulário de cadastro de médico -->
     <form #medicoForm="ngForm" (ngSubmit)="salvar()">
       <div class="card mb-4">
         <div class="card-body">
@@ -43,6 +42,15 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>Claudecir Evandro Gambeta</td>
+                <td>Joelho</td>
+                <td>11114-SC</td>
+                <td>
+                    <a class="btn btn-secondary disabled">Alterar</a>
+                    <a class="btn btn-danger disabled">Excluir</a>
+                </td>
+            </tr>
             <tr *ngFor="let umMedico of listaMedicos">
                 <td>{{umMedico.nome}}</td>
                 <td>{{umMedico.especialidade}}</td>
