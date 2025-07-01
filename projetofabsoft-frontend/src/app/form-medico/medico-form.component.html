@@ -1,40 +1,50 @@
 <main class="container">
-    <h2>Médico</h2>
-    <form (ngSubmit)="onSubmit(medicoForm)" #medicoForm="ngForm">
-        <div class="card">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="txtNome">Nome</label>
-                    <input type="text" 
-                        name="nome"
-                        [(ngModel)]="medico.nome"
-                        class="form-control"
-                        id="txtNome"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="txtEspecialidade">Especialidade</label>
-                    <input type="text" 
-                        name="especialidade"
-                        [(ngModel)]="medico.especialidade"
-                        class="form-control"
-                        id="txtEspecialidade"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="txtCRM">CRM</label>
-                    <input type="text" 
-                        name="crm"
-                        [(ngModel)]="medico.crm"
-                        class="form-control"
-                        id="txtCRM"
-                        required>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+  <div class="d-flex align-items-center justify-content-between mt-4 mb-3">
+    <h2 class="text-primary fw-bold mb-0">Cadastro de Médico</h2>
+    <button class="btn btn-outline-secondary" (click)="voltar()">
+      <i class="fas fa-arrow-left me-2"></i>Voltar
+    </button>
+  </div>
+  <div class="card shadow-sm rounded">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit(medicoForm)" #medicoForm="ngForm">
+        <div class="form-group mb-3">
+          <label for="txtNome" class="fw-semibold">Nome</label>
+          <input type="text"
+                 name="nome"
+                 [(ngModel)]="medico.nome"
+                 class="form-control"
+                 id="txtNome"
+                 required
+                 placeholder="Digite o nome do médico">
         </div>
+        <div class="form-group mb-3">
+          <label for="txtEspecialidade" class="fw-semibold">Especialidade</label>
+          <input type="text"
+                 name="especialidade"
+                 [(ngModel)]="medico.especialidade"
+                 class="form-control"
+                 id="txtEspecialidade"
+                 required
+                 placeholder="Digite a especialidade">
+        </div>
+        <div class="form-group mb-4">
+          <label for="txtCRM" class="fw-semibold">CRM</label>
+          <input type="text"
+                 name="crm"
+                 [(ngModel)]="medico.crm"
+                 class="form-control"
+                 id="txtCRM"
+                 required
+                 placeholder="Digite o CRM">
+        </div>
+        <button type="submit" class="btn btn-success px-4 py-2">
+          <i class="fas fa-save me-2"></i>Salvar
+        </button>
         <div *ngIf="mensagem" [ngClass]="{'text-success': !erro, 'text-danger': erro}" class="mt-2">
-            {{ mensagem }}
+          {{ mensagem }}
         </div>
-    </form>
+      </form>
+    </div>
+  </div>
 </main>

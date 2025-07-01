@@ -1,58 +1,71 @@
 <main class="container">
-    <h2>Paciente</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtNome">Nome</label>
-                <input type="text" 
-                [(ngModel)]="paciente.nome"
-                class="form-control"
-                id="txtNome">
-            </div>
-            <div class="form-group">
-                <label for="txtCPF">CPF</label>
-                <input type="text" 
-                [(ngModel)]="paciente.cpf"
-                class="form-control"
-                id="txtCPF">
-            </div>
-            <div class="form-group">
-                <label for="txtData de Nascimento">Data de Nascimento</label>
-                <input type="text" 
-                [(ngModel)]="paciente.dataNascimento"
-                class="form-control"
-                id="txtData de Nascimento">
-            </div>
-            <div class="form-group">
-                <label for="txtxTelefone">Telefone</label>
-                <input type="text" 
-                [(ngModel)]="paciente.telefone"
-                class="form-control"
-                id="txtxTelefone">
-            </div>
-            <div class="form-group">
-                <label for="txtEmail">Email</label>
-                <input type="text" 
-                [(ngModel)]="paciente.email"
-                class="form-control"
-                id="txtEmail">
-            </div>
-            <div class="form-group">
-                <label for="txtConvenio">Convênio</label>
-                <input type="text" 
-                [(ngModel)]="paciente.convenio"
-                class="form-control"
-                id="txtConvenio">
-            </div>
-            <div class="form-group">
-                <label for="txtEndereco">Endereço</label>
-                <input type="text" 
-                [(ngModel)]="paciente.endereco"
-                class="form-control"
-                id="txtEndereco">
-            </div>
-        </div>
-        <button (click)="salvar()"
-        class="btn btn-primary">Salvar</button>
+  <div class="d-flex align-items-center justify-content-between mt-4 mb-3">
+    <h2 class="text-primary fw-bold mb-0">Cadastro de Paciente</h2>
+    <button class="btn btn-outline-secondary" (click)="voltar()">
+      <i class="fas fa-arrow-left me-2"></i>Voltar
+    </button>
+  </div>
+  <div class="card shadow-sm rounded">
+    <div class="card-body">
+      <div class="form-group mb-3">
+        <label for="txtNome" class="fw-semibold">Nome</label>
+        <input type="text"
+               [(ngModel)]="paciente.nome"
+               class="form-control"
+               id="txtNome"
+               placeholder="Digite o nome do paciente">
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtCPF" class="fw-semibold">CPF</label>
+        <input type="text"
+               [(ngModel)]="paciente.cpf"
+               class="form-control"
+               id="txtCPF"
+               placeholder="Digite o CPF">
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtDataNascimento" class="fw-semibold">Data de Nascimento</label>
+        <input type="text"
+               [(ngModel)]="paciente.dataNascimento"
+               class="form-control"
+               id="txtDataNascimento"
+               placeholder="Digite a data de nascimento">
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtTelefone" class="fw-semibold">Telefone</label>
+        <input type="text"
+               [(ngModel)]="paciente.telefone"
+               class="form-control"
+               id="txtTelefone"
+               placeholder="Digite o telefone">
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtEmail" class="fw-semibold">Email</label>
+        <input type="text"
+               [(ngModel)]="paciente.email"
+               class="form-control"
+               id="txtEmail"
+               placeholder="Digite o email">
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtConvenio" class="fw-semibold">Convênio</label>
+        <input type="text"
+               [(ngModel)]="paciente.convenio"
+               class="form-control"
+               id="txtConvenio"
+               placeholder="Digite o convênio">
+      </div>
+      <div class="form-group mb-4">
+        <label for="txtEndereco" class="fw-semibold">Endereço</label>
+        <input type="text"
+               [(ngModel)]="paciente.endereco"
+               class="form-control"
+               id="txtEndereco"
+               placeholder="Digite o endereço">
+      </div>
+      <button (click)="salvar()" class="btn btn-success px-4 py-2">
+        <i class="fas fa-save me-2"></i>Salvar
+      </button>
     </div>
+  </div>
 </main>

@@ -31,6 +31,10 @@ export class MedicoService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  excluir(id: number | undefined): Observable<void> {
+    return this.delete(id);
+  }
+
   excluirMedico(id: number | undefined): Observable<void> {
     return this.delete(id);
   }

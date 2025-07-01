@@ -37,4 +37,8 @@ export class FormMedicoComponent {
       this.erro = true;
     }
   }
+
+  voltar() {
+  window.location.href = '/medicos';
+}
 }

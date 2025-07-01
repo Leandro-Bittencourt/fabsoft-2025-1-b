@@ -1,135 +1,324 @@
-<nav class="navbar navbar-expand navbar-light bg-light mb-4">
+<nav class="navbar navbar-expand navbar-light bg-light mb-4 shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Agendamento Online</a>
-    <div class="navbar-nav">
-      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/pacientes'">Pacientes</button>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <img src="https://img.icons8.com/color/48/000000/calendar--v1.png" alt="Logo" width="40" height="40" style="border-radius:10px;">
+      <span class="fs-4 fw-bold text-primary">Agendamento Online</span>
+    </a>
+    <div class="navbar-nav ms-auto">
+      <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='/'">
+        <i class="fas fa-home me-1"></i> Home
+      </button>
+      <button type="button" class="btn btn-secondary me-2" onclick="window.location.href='http://localhost:4200/pacientes'">Pacientes</button>
       <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/consultas'">Agendamentos</button>
     </div>
   </div>
 </nav>
 
 <main class="container">
-  <h2>Médicos</h2>
-  <a href="http://localhost:4200/medicos/novo" class="btn btn-primary mb-3">Cadastrar Médico</a>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Especialidade</th>
-        <th>CRM</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Claudecir Evandro Gambeta</td>
-        <td>Joelho</td>
-        <td>11114-SC</td>
-      </tr>
-      <tr>
-        <td>Dr. Ana Beatriz Silva</td>
-        <td>Pediatria</td>
-        <td>CRM-SP 123456</td>
-      </tr>
-      <tr>
-        <td>Dr. João Carlos Mendes</td>
-        <td>Cardiologia</td>
-        <td>CRM-RJ 234567</td>
-      </tr>
-      <tr>
-        <td>Dra. Fernanda Souza Lima</td>
-        <td>Ginecologia</td>
-        <td>CRM-MG 345678</td>
-      </tr>
-      <tr>
-        <td>Dr. Rafael Torres Oliveira</td>
-        <td>Ortopedia</td>
-        <td>CRM-BA 456789</td>
-      </tr>
-      <tr>
-        <td>Dra. Mariana Castro Rocha</td>
-        <td>Dermatologia</td>
-        <td>CRM-PR 567890</td>
-      </tr>
-      <tr>
-        <td>Dr. Bruno Almeida Nunes</td>
-        <td>Neurologia</td>
-        <td>CRM-RS 678901</td>
-      </tr>
-      <tr>
-        <td>Dra. Camila Santos Pereira</td>
-        <td>Endocrinologia</td>
-        <td>CRM-PE 789012</td>
-      </tr>
-      <tr>
-        <td>Dr. Pedro Henrique Duarte</td>
-        <td>Clínica Geral</td>
-        <td>CRM-SC 890123</td>
-      </tr>
-      <tr>
-        <td>Dra. Juliana Melo Figueiredo</td>
-        <td>Oftalmologia</td>
-        <td>CRM-CE 901234</td>
-      </tr>
-      <tr>
-        <td>Dr. Gustavo Ramos Ferreira</td>
-        <td>Psiquiatria</td>
-        <td>CRM-GO 012345</td>
-      </tr>
-      <tr>
-        <td>Dra. Letícia Amaral Nogueira</td>
-        <td>Reumatologia</td>
-        <td>CRM-DF 123457</td>
-      </tr>
-      <tr>
-        <td>Dr. Lucas Vieira Matos</td>
-        <td>Urologia</td>
-        <td>CRM-PA 234568</td>
-      </tr>
-      <tr>
-        <td>Dra. Patrícia Cunha Barreto</td>
-        <td>Oncologia</td>
-        <td>CRM-AM 345679</td>
-      </tr>
-      <tr>
-        <td>Dr. Felipe Azevedo Campos</td>
-        <td>Nefrologia</td>
-        <td>CRM-MA 456780</td>
-      </tr>
-      <tr>
-        <td>Dra. Renata Dias Moreira</td>
-        <td>Hematologia</td>
-        <td>CRM-MS 567891</td>
-      </tr>
-      <tr>
-        <td>Dr. Eduardo Costa Lima</td>
-        <td>Gastroenterologia</td>
-        <td>CRM-AL 678902</td>
-      </tr>
-      <tr>
-        <td>Dra. Simone Ribeiro Tavares</td>
-        <td>Infectologia</td>
-        <td>CRM-PI 789013</td>
-      </tr>
-      <tr>
-        <td>Dr. Marcelo Antunes Cardoso</td>
-        <td>Cirurgia Geral</td>
-        <td>CRM-ES 890124</td>
-      </tr>
-      <tr>
-        <td>Dra. Bianca Lopes Ferreira</td>
-        <td>Pneumologia</td>
-        <td>CRM-TO 901235</td>
-      </tr>
-      <tr>
-        <td>Dr. André Luiz Martins</td>
-        <td>Medicina do Trabalho</td>
-        <td>CRM-AC 012346</td>
-      </tr>
-      <tr *ngFor="let medico of medicos">
-        <td>{{ medico.nome }}</td>
-        <td>{{ medico.especialidade }}</td>
-        <td>{{ medico.crm }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 class="mt-4 mb-4 text-center text-primary fw-bold">Médicos</h2>
+  <div class="d-flex justify-content-end mb-3">
+    <a href="http://localhost:4200/medicos/novo" class="btn btn-success px-4 py-2 shadow-sm">
+      <i class="fas fa-user-md me-2"></i>Cadastrar Médico
+    </a>
+  </div>
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-striped align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>Nome</th>
+          <th>Especialidade</th>
+          <th>CRM</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Claudecir Evandro Gambeta</td>
+          <td>Joelho</td>
+          <td>11114-SC</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Ana Beatriz Silva</td>
+          <td>Pediatria</td>
+          <td>CRM-SP 123456</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. João Carlos Mendes</td>
+          <td>Cardiologia</td>
+          <td>CRM-RJ 234567</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Fernanda Souza Lima</td>
+          <td>Ginecologia</td>
+          <td>CRM-MG 345678</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Rafael Torres Oliveira</td>
+          <td>Ortopedia</td>
+          <td>CRM-BA 456789</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Mariana Castro Rocha</td>
+          <td>Dermatologia</td>
+          <td>CRM-PR 567890</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Bruno Almeida Nunes</td>
+          <td>Neurologia</td>
+          <td>CRM-RS 678901</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Camila Santos Pereira</td>
+          <td>Endocrinologia</td>
+          <td>CRM-PE 789012</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Pedro Henrique Duarte</td>
+          <td>Clínica Geral</td>
+          <td>CRM-SC 890123</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Juliana Melo Figueiredo</td>
+          <td>Oftalmologia</td>
+          <td>CRM-CE 901234</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Gustavo Ramos Ferreira</td>
+          <td>Psiquiatria</td>
+          <td>CRM-GO 012345</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Letícia Amaral Nogueira</td>
+          <td>Reumatologia</td>
+          <td>CRM-DF 123457</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Lucas Vieira Matos</td>
+          <td>Urologia</td>
+          <td>CRM-PA 234568</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Patrícia Cunha Barreto</td>
+          <td>Oncologia</td>
+          <td>CRM-AM 345679</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Felipe Azevedo Campos</td>
+          <td>Nefrologia</td>
+          <td>CRM-MA 456780</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Renata Dias Moreira</td>
+          <td>Hematologia</td>
+          <td>CRM-MS 567891</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Eduardo Costa Lima</td>
+          <td>Gastroenterologia</td>
+          <td>CRM-AL 678902</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Simone Ribeiro Tavares</td>
+          <td>Infectologia</td>
+          <td>CRM-PI 789013</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. Marcelo Antunes Cardoso</td>
+          <td>Cirurgia Geral</td>
+          <td>CRM-ES 890124</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dra. Bianca Lopes Ferreira</td>
+          <td>Pneumologia</td>
+          <td>CRM-TO 901235</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Dr. André Luiz Martins</td>
+          <td>Medicina do Trabalho</td>
+          <td>CRM-AC 012346</td>
+          <td class="text-center">
+            <a class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+        <tr *ngFor="let medico of medicos">
+          <td>{{ medico.nome }}</td>
+          <td>{{ medico.especialidade }}</td>
+          <td>{{ medico.crm }}</td>
+          <td class="text-center">
+            <a (click)="alterar(medico)" class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-edit text-primary"></i> Alterar
+            </a>
+            <a (click)="abrirConfirmacao(medico)" class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>

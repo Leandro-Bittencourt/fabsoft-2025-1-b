@@ -30,6 +30,11 @@ export const routes: Routes = [
   {
   path: 'consultas',
   loadComponent: () => import('./consultas/agendamento.component').then(m => m.AgendamentoComponent)
+},
+
+{
+  path: '',
+  loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
 }
 
 ];

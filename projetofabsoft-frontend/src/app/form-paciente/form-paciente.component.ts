@@ -36,4 +36,8 @@ export class FormPacienteComponent {
           this.router.navigate(['pacientes']);
         });
     }
+
+    voltar() {
+  window.location.href = '/pacientes';
+}
 }

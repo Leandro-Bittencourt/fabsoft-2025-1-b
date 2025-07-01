@@ -1,47 +1,63 @@
-<nav class="navbar navbar-expand navbar-light bg-light mb-4">
+<nav class="navbar navbar-expand navbar-light bg-light mb-4 shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Agendamento Online</a>
-    <div class="navbar-nav">
-      <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/medicos'">Médicos</button>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <img src="https://img.icons8.com/color/48/000000/calendar--v1.png" alt="Logo" width="40" height="40" style="border-radius:10px;">
+      <span class="fs-4 fw-bold text-primary">Agendamento Online</span>
+    </a>
+    <div class="navbar-nav ms-auto">
+      <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='/'">
+        <i class="fas fa-home me-1"></i> Home
+      </button>
+      <button type="button" class="btn btn-secondary me-2" onclick="window.location.href='http://localhost:4200/medicos'">Médicos</button>
       <button type="button" class="btn btn-secondary" onclick="window.location.href='http://localhost:4200/consultas'">Agendamentos</button>
     </div>
   </div>
 </nav>
 
 <main class="container">
-    <h2>Pacientes</h2>
+    <h2 class="mt-4 mb-4 text-center text-primary fw-bold">Pacientes</h2>
 
-    <a (click)="novo()" class="btn btn-primary">Cadastrar Paciente </a>
+    <div class="d-flex justify-content-end mb-3">
+      <a (click)="novo()" class="btn btn-success px-4 py-2 shadow-sm">
+        <i class="fas fa-user-plus me-2"></i>Cadastrar Paciente
+      </a>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Data de Nascimento</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Convênio</th>
-                <th>Endereço</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umPaciente of listaPacientes">
-                <td>{{umPaciente.nome}}</td>
-                <td>{{umPaciente.cpf}}</td>
-                <td>{{umPaciente.dataNascimento}}</td>
-                <td>{{umPaciente.telefone}}</td>
-                <td>{{umPaciente.email}}</td>
-                <td>{{umPaciente.convenio}}</td>
-                <td>{{umPaciente.endereco}}</td>
-                <td>
-                    <a (click)="alterar(umPaciente)" class="btn btn-secondary">Alterar</a>
-                    <a (click)="abrirConfirmacao(umPaciente)" class="btn btn-danger">Excluir</a>
-                </td>
+    <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+          <thead class="table-primary">
+              <tr>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Data de Nascimento</th>
+                  <th>Telefone</th>
+                  <th>Email</th>
+                  <th>Convênio</th>
+                  <th>Endereço</th>
+                  <th class="text-center">Ações</th>
+              </tr>
+          </thead>
+          <tbody>
+    <tr *ngFor="let umPaciente of listaPacientes">
+        <td>{{umPaciente.nome}}</td>
+        <td>{{umPaciente.cpf}}</td>
+        <td>{{umPaciente.dataNascimento}}</td>
+        <td>{{umPaciente.telefone}}</td>
+        <td>{{umPaciente.email}}</td>
+        <td>{{umPaciente.convenio}}</td>
+        <td>{{umPaciente.endereco}}</td>
+        <td class="text-center">
+                <a (click)="alterar(umPaciente)" class="btn btn-light btn-xs border me-1 px-2 py-1" style="font-size: 0.85rem;">
+                <i class="fas fa-edit text-primary"></i> Alterar
+                </a>
+                <a (click)="abrirConfirmacao(umPaciente)" class="btn btn-light btn-xs border px-2 py-1" style="font-size: 0.85rem;">
+              <i class="fas fa-trash-alt text-danger"></i> Excluir
+            </a>
+            </td>
             </tr>
         </tbody>
-    </table>
+      </table>
+    </div>
 </main>
 
 <div class="modal fade" #myModal tabindex="-1" role="dialog">
